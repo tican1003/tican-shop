@@ -1,0 +1,254 @@
+.header {
+  height: 120px;
+  background-image: linear-gradient(0, #fe6433, #f53e2d);
+}
+
+.header__navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__navbar-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 14px;
+}
+
+.header__navbar-item {
+  padding: 0 8px;
+  position: relative;
+  min-height: 26px;
+}
+
+.header__navbar-item:hover .header__notify {
+  display: block;
+}
+
+.header__navbar-item--qr:hover .header__qr {
+  display: block;
+}
+
+.header__navbar-item,
+.header__navbar-item-link {
+  /* Display & Box model */
+  display: inline-block;
+
+  /* Color */
+  color: var(--white-color);
+
+  /* Text */
+  font-size: 1.4rem;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.header__navbar-list,
+.header__navbar-item,
+.header__navbar-item-link,
+.header__navbar-icon-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.header__navbar-item:hover,
+.header__navbar-icon-link:hover,
+.header__navbar-item-link:hover {
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+.header__navbar-item--strong {
+  font-weight: 400;
+}
+
+.header__navbar-item--separate {
+  border-right: 1px solid #fb9086;
+}
+
+.header__navbar-icon-link {
+  color: var(--white-color);
+  text-decoration: none;
+}
+
+.header__navbar-icon {
+  font-size: 1.8rem;
+  margin: 0 4px;
+}
+
+.header__navbar-title--no-pointer {
+  cursor: text;
+  color: var(--white-color);
+}
+
+/* ===== Header QR Code ===== */
+.header__qr {
+  /* Positioning */
+  position: absolute;
+  left: 0;
+  top: 120%;
+
+  /* Display and Box */
+  display: none;
+  width: 186px;
+  padding: 8px;
+  border-radius: 2px;
+
+  /* Color */
+  background-color: var(--white-color);
+
+  /* Other */
+  animation: fadeIn ease-in 0.1s;
+}
+
+.header__qr::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -16px;
+  width: 100%;
+  height: 20px;
+}
+
+.header__qr-img {
+  width: 100%;
+}
+
+.header__qr-apps {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__qr-link:nth-child(1) {
+  margin-left: 11px;
+}
+
+.header__qr-link:nth-child(2) {
+  margin-right: 11px;
+}
+
+.header__qr-download-img {
+  height: 16px;
+}
+
+/* Header notification */
+.header__notify {
+  display: none;
+  position: absolute;
+  top: 120%;
+  right: 0;
+  width: 404px;
+  background-color: var(--white-color);
+  border: 1px solid #d3d3d3;
+  border-radius: 2px;
+  cursor: default;
+  transform-origin: calc(100% - 20px) top;
+  animation: headerNotifyGrowth ease-in 0.25s;
+  will-change: opacity, transform;
+}
+
+.header__notify::before {
+  content: "";
+  border-width: 20px 27px;
+  border-style: solid;
+  border-color: transparent transparent var(--white-color) transparent;
+  position: absolute;
+  right: 4px;
+  top: -29px;
+}
+
+.header__notify::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: -16px;
+  width: 95px;
+  height: 20px;
+}
+
+@keyframes headerNotifyGrowth {
+  from {
+    transform: scale(0);
+    opacity: 0.2;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.header__notify-header {
+  height: 40px;
+  background-color: var(--white-color);
+}
+
+.header__notify-header > h3 {
+  color: #888;
+  margin: 0 0 0 12px;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 40px;
+  user-select: none;
+}
+
+.header__notify-list {
+  padding-left: 0;
+}
+
+.header__notify-item {
+  display: flex;
+}
+
+.header__notify-item:hover {
+  background-color: #f7f7f7;
+}
+
+.header__notify-item--viewed {
+  background-color: rgba(238, 77, 45, 0.08);
+}
+
+.header__notify-link {
+  display: flex;
+  width: 100%;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.header__notify-img {
+  width: 48px;
+  object-fit: contain;
+}
+
+.header__notify-info {
+  margin-left: 12px;
+}
+
+.header__notify-name {
+  display: block;
+  font-size: 1.4rem;
+  color: var(--text-color);
+  font-weight: 400;
+  margin-bottom: 5px;
+  line-height: 1.8rem;
+}
+
+.header__notify-description {
+  display: block;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: #756f6e;
+}
+
+.header__notify-footer {
+  text-align: center;
+}
+
+.header__notify-footer-btn {
+  display: block;
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 8px 16px;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
