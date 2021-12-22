@@ -86,7 +86,7 @@ html {
 /* Button styles */
 .btn {
   /* Display and Box */
-  min-width: 142px;
+  min-width: 124px;
   height: 34px;
   text-decoration: none;
   border: none;
